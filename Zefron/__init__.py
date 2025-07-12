@@ -12,7 +12,15 @@ clients = []
 ids = []
 
 SUDO_USERS.append(OWNER_ID)
-aiosession = ClientSession()
+# Remove the immediate ClientSession creation to avoid "no running event loop" error
+aiosession = None
+
+def get_aiosession():
+    """Get or create aiohttp session lazily"""
+    global aiosession
+    if aiosession is None:
+        aiosession = ClientSession()
+    return aiosession
 
 if API_ID:
    API_ID = API_ID

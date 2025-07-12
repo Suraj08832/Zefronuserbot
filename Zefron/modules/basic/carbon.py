@@ -4,7 +4,7 @@ from io import BytesIO
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-from Zefron import aiosession
+from Zefron import get_aiosession
 
 from Zefron.helper.PyroHelpers import ReplyCheck
 
@@ -13,6 +13,7 @@ from Zefron.modules.help import add_command_help
 
 async def make_carbon(code):
     url = "https://carbonara.vercel.app/api/cook"
+    aiosession = get_aiosession()
     async with aiosession.post(url, json={"code": code}) as resp:
         image = BytesIO(await resp.read())
     image.name = "carbon.png"
