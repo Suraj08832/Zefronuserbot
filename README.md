@@ -4,13 +4,13 @@
 
 - A First Telegram Userbot Project With Multi Clients Based On PyroGram
 
-<p align="center"><a href="https://t.me/TheUpdatesChannel"><img src="https://telegra.ph/file/723d8ef9fb7e721135221.jpg" width="300"></a></p>
+<p align="center"><a href="https://t.me/bots_update_all"><img src="https://telegra.ph/file/723d8ef9fb7e721135221.jpg" width="300"></a></p>
 <p align="center">
     <a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/Made%20with-Python-black.svg?style=flat-square&logo=python&logoColor=blue&color=red" /></a>
 
 ## Repo Stats
 
-![github card](https://github-readme-stats.vercel.app/api/pin/?username=ITZ-ZAID&repo=ZAID-USERBOT&theme=dark)
+![github card](https://github-readme-stats.vercel.app/api/pin/?username=ITZ-Zefron&repo=Zefron-USERBOT&theme=dark)
 
 
 ## Requirements 
@@ -22,7 +22,7 @@
 
 ## String Session
 
-<p align="center"><a href="https://replit.com/@Itz-zaid/pyrogram"> <img src="https://img.shields.io/badge/String%20Session-black?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://replit.com/@Itz-Zefron/pyrogram"> <img src="https://img.shields.io/badge/String%20Session-black?style=for-the-badge&logo=replit" width="220" height="38.45"/></a></p>
 
 
 ## 𝐃𝐄𝐏𝐋𝐎𝐘𝐌𝐄𝐍𝐓𝐒
@@ -31,7 +31,7 @@
 
 [ꜰᴏʀᴋ ᴅᴇᴘʟᴏʏ ɪꜱ ʜɪɢʜʟʏ ʀᴇᴄᴏᴍᴍᴇɴᴅᴇᴅ](https://telegra.ph/file/5bcf79f948ca06030640c.mp4)
 
-<p align="center"><a href="http://dashboard.heroku.com/new?template=https://github.com/Itz-Zaid/Zaid-Userbot"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-pink?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+<p align="center"><a href="http://dashboard.heroku.com/new?template=https://github.com/Itz-Zefron/Zefron-Userbot"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-pink?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 ## Features 
 
@@ -43,24 +43,24 @@
 
 ## Deploy To Render 
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ITZ-ZAID/ZAID-USERBOT)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ITZ-Zefron/Zefron-USERBOT)
 
 ## Hosting With Mogenius 
 
 I will suggest to host on mogenius if uh don't know what is this then 
 Checkout Tutorial!
-<p align="center"><a href="https://youtu.be/qXT1jl60okk"> <img src="https://img.shields.io/badge/ZaidUserBot%20Deploy-black?style=for-the-badge&logo=youtube" width="220" height="38.45"/></a></p>
+<p align="center"><a href="https://youtu.be/qXT1jl60okk"> <img src="https://img.shields.io/badge/ZefronUserBot%20Deploy-black?style=for-the-badge&logo=youtube" width="220" height="38.45"/></a></p>
 
 
 ## VPS/Locally deploy!
 ```console
-Zaid@Debian~ $ apt-get -y update
-Zaid@Debian~ $ apt-get -y install git gcc python3-pip -y
-Zaid@Debian~ $ git clone https://github.com/ITZ-ZAID/ZAID-USERBOT
-Zaid@Debian~ $ cd ZAID-USERBOT
-Zaid@Debian~ $ pip3 install -U -r requirements.txt
-Zaid@Debian~ $ cp sample.env .env
-Zaid@Debian~ $ nano .env
+Zefron@Debian~ $ apt-get -y update
+Zefron@Debian~ $ apt-get -y install git gcc python3-pip -y
+Zefron@Debian~ $ git clone https://github.com/ITZ-Zefron/Zefron-USERBOT
+Zefron@Debian~ $ cd Zefron-USERBOT
+Zefron@Debian~ $ pip3 install -U -r requirements.txt
+Zefron@Debian~ $ cp sample.env .env
+Zefron@Debian~ $ nano .env
 ```
 
 <h3 align="center">
@@ -68,8 +68,8 @@ Zaid@Debian~ $ nano .env
 </h3>
 
 ```console
-Zaid@Debian~ $ screen
-Zaid@Debian~ $ python3 -m Zaid
+Zefron@Debian~ $ screen
+Zefron@Debian~ $ python3 -m Zefron
 ```
 
 ## Disclaimer 
@@ -99,5 +99,5 @@ and you ended up in a Finale Battle with Telegram and at the end
 
 <p align="center">𝐒𝐮𝐩𝐩𝐨𝐫𝐭 / 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 ----> </p>
 
-<p align="center"><a href="https://t.me/TheSupportChat"><img src="https://img.shields.io/badge/ᴛᴇʟᴇɢʀᴀᴍ-𝐒𝐮𝐩𝐩𝐨𝐫𝐭-black?&style=for-the-badge&logo=telegram" width="220" height="38.45"></a></p>
-<p align="center"><a href="https://t.me/TheUpdatesChannel"><img src="https://img.shields.io/badge/ᴛᴇʟᴇɢʀᴀᴍ-𝐔𝐩𝐝𝐚𝐭𝐞𝐬-black?&style=for-the-badge&logo=telegram" width="220" height="38.45"></a></p>
+<p align="center"><a href="https://t.me/bots_update_all"><img src="https://img.shields.io/badge/ᴛᴇʟᴇɢʀᴀᴍ-𝐒𝐮𝐩𝐩𝐨𝐫𝐭-black?&style=for-the-badge&logo=telegram" width="220" height="38.45"></a></p>
+<p align="center"><a href="https://t.me/bots_update_all"><img src="https://img.shields.io/badge/ᴛᴇʟᴇɢʀᴀᴍ-𝐔𝐩𝐝𝐚𝐭𝐞𝐬-black?&style=for-the-badge&logo=telegram" width="220" height="38.45"></a></p>
