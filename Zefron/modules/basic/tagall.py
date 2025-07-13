@@ -1,9 +1,10 @@
 from asyncio import sleep
 
-from pyrogram import Client, filters
+from pyrogram import Client, filters, enums
 from pyrogram.types import Message
+from pyrogram.errors import ChatAdminRequired, FloodWait
 
-
+from Zefron.helper.parser import mention_html
 from Zefron.modules.help import add_command_help
 
 spam_chats = []
@@ -22,30 +23,54 @@ async def mentionall(client: Client, message: Message):
     chat_id = message.chat.id
     direp = message.reply_to_message
     args = get_arg(message)
+    
     if not direp and not args:
         return await message.edit("**Send me a message or reply to a message!**")
+    
+    # Check if user is admin in the chat
+    try:
+        member = await client.get_chat_member(chat_id, client.me.id)
+        if member.status not in [enums.ChatMemberStatus.ADMINISTRATOR, enums.ChatMemberStatus.OWNER]:
+            return await message.edit("**I need to be admin to tag all members!**")
+    except Exception as e:
+        return await message.edit(f"**Error checking permissions: {str(e)}**")
+    
     await message.delete()
     spam_chats.append(chat_id)
     usrnum = 0
     usrtxt = ""
-    async for usr in client.get_chat_members(chat_id):
-        if not chat_id in spam_chats:
-            break
-        usrnum += 1
-        usrtxt += f"[{usr.user.first_name}](tg://user?id={usr.user.id}), "
-        if usrnum == 5:
-            if args:
-                txt = f"{args}\n\n{usrtxt}"
-                await client.send_message(chat_id, txt)
-            elif direp:
-                await direp.reply(usrtxt)
-            await sleep(2)
-            usrnum = 0
-            usrtxt = ""
+    
     try:
-        spam_chats.remove(chat_id)
-    except:
-        pass
+        # Use the same approach as the everyone command
+        kek = client.get_chat_members(chat_id)
+        async for usr in kek:
+            if not chat_id in spam_chats:
+                break
+            # Skip bots
+            if usr.user.is_bot:
+                continue
+            usrnum += 1
+            usrtxt += f"[{usr.user.first_name}](tg://user?id={usr.user.id}), "
+            if usrnum == 5:
+                if args:
+                    txt = f"{args}\n\n{usrtxt}"
+                    await client.send_message(chat_id, txt)
+                elif direp:
+                    await direp.reply(usrtxt)
+                await sleep(2)
+                usrnum = 0
+                usrtxt = ""
+    except ChatAdminRequired:
+        await message.reply_text("**I need to be admin to tag all members!**")
+    except FloodWait as e:
+        await message.reply_text(f"**Flood wait: {e.value} seconds**")
+    except Exception as e:
+        await message.reply_text(f"**Error: {str(e)}**")
+    finally:
+        try:
+            spam_chats.remove(chat_id)
+        except:
+            pass
 
 
 @Client.on_message(filters.command("cancel", ".") & filters.me)

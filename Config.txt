@@ -15,7 +15,7 @@ ALIVE_TEXT = None
 PM_LOGGER = None
 LOG_GROUP = None
 GIT_TOKEN = None #personal access token
-REPO_URL = "https://github.com/ITZ-Zefron/Zefron-USERBOT"
+REPO_URL = "https://github.com/Suraj08832/Zefronuserbot"
 BRANCH = "master" #don't change
  
 STRING_SESSION1 = ""

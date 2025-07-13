@@ -31,7 +31,7 @@
 
 [ꜰᴏʀᴋ ᴅᴇᴘʟᴏʏ ɪꜱ ʜɪɢʜʟʏ ʀᴇᴄᴏᴍᴍᴇɴᴅᴇᴅ](https://telegra.ph/file/5bcf79f948ca06030640c.mp4)
 
-<p align="center"><a href="http://dashboard.heroku.com/new?template=https://github.com/Itz-Zefron/Zefron-Userbot"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-pink?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
+<p align="center"><a href="http://dashboard.heroku.com/new?template=https://github.com/Suraj08832/Zefronuserbot"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-pink?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 ## Features 
 
@@ -43,7 +43,7 @@
 
 ## Deploy To Render 
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ITZ-Zefron/Zefron-USERBOT)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Suraj08832/Zefronuserbot)
 
 ## Hosting With Mogenius 
 
@@ -56,7 +56,7 @@ Checkout Tutorial!
 ```console
 Zefron@Debian~ $ apt-get -y update
 Zefron@Debian~ $ apt-get -y install git gcc python3-pip -y
-Zefron@Debian~ $ git clone https://github.com/ITZ-Zefron/Zefron-USERBOT
+Zefron@Debian~ $ git clone https://github.com/Suraj08832/Zefronuserbot
 Zefron@Debian~ $ cd Zefron-USERBOT
 Zefron@Debian~ $ pip3 install -U -r requirements.txt
 Zefron@Debian~ $ cp sample.env .env

@@ -34,31 +34,55 @@ async def speed_test(client: Client, message: Message):
        pass
     spd = speedtest.Speedtest()
 
-    new_msg = await new_msg.edit(
-        f"`{new_msg.text}`\n" "`Getting best server based on ping . . .`"
-    )
+    try:
+        new_msg = await new_msg.edit(
+            f"`{new_msg.text}`\n" "`Getting best server based on ping . . .`"
+        )
+    except:
+        pass
     spd.get_best_server()
 
-    new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "`Testing download speed . . .`")
+    try:
+        new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "`Testing download speed . . .`")
+    except:
+        pass
     spd.download()
 
-    new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "`Testing upload speed . . .`")
+    try:
+        new_msg = await new_msg.edit(f"`{new_msg.text}`\n" "`Testing upload speed . . .`")
+    except:
+        pass
     spd.upload()
 
-    new_msg = await new_msg.edit(
-        f"`{new_msg.text}`\n" "`Getting results and preparing formatting . . .`"
-    )
+    try:
+        new_msg = await new_msg.edit(
+            f"`{new_msg.text}`\n" "`Getting results and preparing formatting . . .`"
+        )
+    except:
+        pass
     results = spd.results.dict()
 
-    await new_msg.edit(
-        WWW.SpeedTest.format(
-            start=results["timestamp"],
-            ping=results["ping"],
-            download=SpeedConvert(results["download"]),
-            upload=SpeedConvert(results["upload"]),
-            isp=results["client"]["isp"],
+    try:
+        await new_msg.edit(
+            WWW.SpeedTest.format(
+                start=results["timestamp"],
+                ping=results["ping"],
+                download=SpeedConvert(results["download"]),
+                upload=SpeedConvert(results["upload"]),
+                isp=results["client"]["isp"],
+            )
         )
-    )
+    except Exception as e:
+        # If editing fails, send a new message
+        await message.reply_text(
+            WWW.SpeedTest.format(
+                start=results["timestamp"],
+                ping=results["ping"],
+                download=SpeedConvert(results["download"]),
+                upload=SpeedConvert(results["upload"]),
+                isp=results["client"]["isp"],
+            )
+        )
 
 
 
@@ -73,19 +97,47 @@ async def pingme(client: Client, message: Message):
        await message.delete()
     except:
        pass
-    await xx.edit("**20% ██▒▒▒▒▒▒▒▒**")
-    await xx.edit("**40% ████▒▒▒▒▒▒**")
-    await xx.edit("**60% ██████▒▒▒▒**")
-    await xx.edit("**80% ████████▒▒**")
-    await xx.edit("**100% ██████████**")
+    
+    # Add error handling for message editing
+    try:
+        await xx.edit("**20% ██▒▒▒▒▒▒▒▒**")
+    except:
+        pass
+    try:
+        await xx.edit("**40% ████▒▒▒▒▒▒**")
+    except:
+        pass
+    try:
+        await xx.edit("**60% ██████▒▒▒▒**")
+    except:
+        pass
+    try:
+        await xx.edit("**80% ████████▒▒**")
+    except:
+        pass
+    try:
+        await xx.edit("**100% ██████████**")
+    except:
+        pass
+    
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await xx.edit(
-        f"❏ **╰☞ 𝗣𝗢𝗡𝗚™╮**\n"
-        f"├• **╰☞** - `%sms`\n"
-        f"├• **╰☞ -** `{uptime}` \n"
-        f"└• **╰☞:** {client.me.mention}" % (duration)
-    )
+    
+    try:
+        await xx.edit(
+            f"❏ **╰☞ 𝗣𝗢𝗡𝗚™╮**\n"
+            f"├• **╰☞** - `%sms`\n"
+            f"├• **╰☞ -** `{uptime}` \n"
+            f"└• **╰☞:** {client.me.mention}" % (duration)
+        )
+    except Exception as e:
+        # If editing fails, send a new message
+        await message.reply_text(
+            f"❏ **╰☞ 𝗣𝗢𝗡𝗚™╮**\n"
+            f"├• **╰☞** - `%sms`\n"
+            f"├• **╰☞ -** `{uptime}` \n"
+            f"└• **╰☞:** {client.me.mention}" % (duration)
+        )
 
 
 add_command_help(

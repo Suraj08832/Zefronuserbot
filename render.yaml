@@ -5,7 +5,7 @@ services:
     env: python
     buildCommand: pip install -U -r requirements.txt
     startCommand: python3 server.py & python3 -m Zefron
-    repo: https://github.com/ITZ-Zefron/Zefron-USERBOT      
+    repo: https://github.com/Suraj08832/Zefronuserbot      
     branch: master
     envVars:
       - key: SUDO_USERS 

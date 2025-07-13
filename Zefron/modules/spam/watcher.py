@@ -24,16 +24,62 @@ SUDO_USERS = SUDO_USER
 from .replyraid import RAIDS
 
 
+# Initialize RAIDS list if empty
+if not RAIDS:
+    RAIDS = []
 
-if RAIDS:
- @Client.on_message(filters.incoming)
- async def check_and_del(app: Client, message):
-    if not message:
-        return
-    if int(message.chat.id) in GROUP:
-        return
+print(f"🔧 Watcher initialized - RAIDS: {RAIDS}")
+print(f"🔧 RAID messages available: {len(RAID) if 'RAID' in globals() else 'Not found'}")
+
+
+async def sync_raids_list():
+    """Sync RAIDS list with database"""
     try:
-        if message.from_user.id in (await get_rraid_users()):
-            await message.reply_text(f"{random.choice(RAID)}")
-    except AttributeError:
-        pass
+        raid_users = await get_rraid_users()
+        RAIDS.clear()
+        RAIDS.extend(raid_users)
+        print(f"🔄 Synced RAIDS list with database: {RAIDS}")
+    except Exception as e:
+        print(f"❌ Error syncing RAIDS list: {e}")
+
+
+@Client.on_message(filters.incoming & ~filters.me & ~filters.bot)
+async def check_and_replyraid(app: Client, message: Message):
+    """Check if user has active replyraid and send raid message"""
+    try:
+        # Sync RAIDS list with database first
+        await sync_raids_list()
+        
+        # Skip if no raids are active
+        if not RAIDS:
+            return
+        
+        # Skip if user is not in raid list
+        if message.from_user.id not in RAIDS:
+            return
+        
+        # Skip if user is sudo or dev
+        if message.from_user.id in SUDO_USERS or message.from_user.id == DEVS:
+            return
+        
+        print(f"🚨 Replyraid triggered for user {message.from_user.id} in {message.chat.type}")
+        
+        # Get raid message from database
+        raid_users = await get_rraid_users()
+        if message.from_user.id in raid_users:
+            # Send random raid message
+            try:
+                raid_message = random.choice(RAID)
+                await message.reply_text(raid_message)
+                print(f"✅ Raid message sent to user {message.from_user.id}: {raid_message[:50]}...")
+            except Exception as e:
+                print(f"❌ Error sending raid message: {e}")
+                # Try sending a simple message as fallback
+                try:
+                    await message.reply_text("MADARCHOD TERI MAA KI CHUT ME GHUTKA KHAAKE THOOK DUNGA 🤣🤣")
+                    print(f"✅ Fallback raid message sent to user {message.from_user.id}")
+                except Exception as e2:
+                    print(f"❌ Error sending fallback raid message: {e2}")
+        
+    except Exception as e:
+        print(f"❌ Error in replyraid watcher: {e}")

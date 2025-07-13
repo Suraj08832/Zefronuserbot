@@ -3,7 +3,7 @@ import asyncio
 from Zefron import SUDO_USER
 from Zefron.modules.help import *
 from pyrogram.methods import messages
-from .pmguard import get_arg, denied_users
+from .pmguard import get_arg
 
 import Zefron.database.pmpermitdb as Zefron
 
