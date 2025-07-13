@@ -89,11 +89,7 @@ and you ended up in a Finale Battle with Telegram and at the end
     I will be rolling on the floor laughing at you.
 ```
 
-## Credits 💖
-- Zect Userbot
-- Man
-- pyrogram
-- xyz ⚡
+
 
 ## Support / Channel
 
