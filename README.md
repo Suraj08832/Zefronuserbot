@@ -4,7 +4,7 @@
 
 - A First Telegram Userbot Project With Multi Clients Based On PyroGram
 
-<p align="center"><a href="https://t.me/bots_update_all"><img src="https://telegra.ph/file/723d8ef9fb7e721135221.jpg" width="300"></a></p>
+<p align="center"><a href="https://t.me/bots_update_all"><img src="" width="300"></a></p>
 <p align="center">
     <a href="https://www.python.org/" alt="made-with-python"> <img src="https://img.shields.io/badge/Made%20with-Python-black.svg?style=flat-square&logo=python&logoColor=blue&color=red" /></a>
 
@@ -111,11 +111,7 @@ and you ended up in a Finale Battle with Telegram and at the end
     I will be rolling on the floor laughing at you.
 ```
 
-## Credits 💖
-- Zect Userbot
-- Man
-- pyrogram
-- xyz ⚡
+
 
 ## Support / Channel
 
