@@ -1,0 +1,5 @@
+run = "bash start.sh"
+language = "python3"
+
+# Optional: Show a nice repl.it GUI
+entrypoint = "server.py" 
