@@ -72,6 +72,28 @@ Zefron@Debian~ $ screen
 Zefron@Debian~ $ python3 -m Zefron
 ```
 
+## Replit पर Deploy कैसे करें (How to Deploy on Replit)
+
+1. इस रिपॉजिटरी को Replit पर Import करें या GitHub से Connect करें।
+2. `sample.env` को `.env` नाम से सेव करें और उसमें अपनी जानकारी भरें।
+3. Replit में Shell खोलें और यह कमांड चलाएँ:
+   ```sh
+   pip install -r requirements.txt
+   ```
+4. Replit की Run बटन या Shell में यह कमांड चलाएँ:
+   ```sh
+   bash start.sh
+   ```
+   या
+   ```sh
+   python3 server.py & python3 -m Zefron
+   ```
+5. Bot चालू हो जाएगा और Web Server भी एक्टिव रहेगा (Replit में ऑटो-शटडाउन नहीं होगा)।
+
+**नोट:**
+- सभी जरूरी वैरिएबल्स `.env` में भरें, जैसे API_ID, API_HASH, OWNER_ID, STRING_SESSION1, आदि।
+- अगर कोई दिक्कत आए तो Replit की Console में Error Logs देखें।
+
 ## Disclaimer 
 
 
