@@ -28,6 +28,9 @@ from .replyraid import RAIDS
 if not RAIDS:
     RAIDS = []
 
+# Always clear RAIDS list on startup to prevent any user from being raided after restart
+RAIDS.clear()
+
 print(f"🔧 Watcher initialized - RAIDS: {RAIDS}")
 print(f"🔧 RAID messages available: {len(RAID) if 'RAID' in globals() else 'Not found'}")
 
@@ -47,8 +50,7 @@ async def sync_raids_list():
 async def check_and_replyraid(app: Client, message: Message):
     """Check if user has active replyraid and send raid message"""
     try:
-        # Sync RAIDS list with database first
-        await sync_raids_list()
+        # Removed: await sync_raids_list()
         
         # Skip if no raids are active
         if not RAIDS:
